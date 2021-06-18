@@ -1,0 +1,51 @@
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript getElementsByName Demo</title>
+</head>
+<body>
+    <p>Please rate the service:</p>
+    <p>
+        <input type="radio" name="rate" value="Very poor"> Very poor
+        <input type="radio" name="rate" value="Poor"> Poor
+        <input type="radio" name="rate" value="OK"> OK
+        <input type="radio" name="rate" value="Good"> Good
+        <input type="radio" name="rate" value="Very Good"> Very Good
+        <input type="text" name="rate" value="Very Good"> 
+    </p>
+    <p>
+        <button id="btnRate">Submit</button>
+        <input type="button" onclick="Submit();" value="submit"/>
+    </p>
+    <script>
+        function Submit(){
+            let rates = document.getElementsByName('rate');
+            let input = document.getElementsByTagName('input');
+            let data = [].map.call(input, input => input.textContent);
+           
+            rates.forEach((rate) =>{
+                if(rate.checked){
+                    alert(`You rated: ${rate.value}`);
+                    alert(`The number of Input tags: ${input.length}`);
+                    alert(data);
+                    console.log(data);
+
+
+                }
+            })
+
+        };
+        // let btn = document.getElementById('btnRate');
+
+        // btn.addEventListener('click', () => {
+        //     let rates = document.getElementsByName('rate');
+        //     rates.forEach((rate) => {
+        //         if (rate.checked) {
+        //             alert(`You rated: ${rate.value}`);
+        //         }
+        //     })
+        // });
+    </script>
+</body>
+</html>

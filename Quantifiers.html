@@ -1,0 +1,33 @@
+<script>
+    // implement of quantifier  /\d
+    let dis= " this is a dis since 2021 , 54 ,1 ,343545,3245452345 "
+let check = /\d{4}/;
+let result = dis.match(check);
+console.log(result);
+check = /\d{1,9}/g;
+console.log(dis.match(check).sort());
+check = /\d{1,}/g;
+console.log(dis.match(check));
+check = /\d{,4}/g;
+console.log(dis.match(check));
+let numbers = '+1-(408)-555-0105'.match(/\d{1,2}/g);
+console.log(numbers);
+// implement of quantifier +
+let phone = "+1-(408)-555-0105";
+result = phone.match(/\d+/g);
+
+console.log(result);
+ phone = "+1-(408)-555-0105";
+ result = phone.match(/\d+/g);
+console.log(result);
+
+// implement of quantifier ?
+name = "yogesh yo.gesh yogesh yoesh"
+console.log(name.match(/yog?esh/g));
+// implement of quantifier ?
+name = "yogesh yo yog yoges"
+let sortname =name.match(/yo\w*/gi);
+     for( let find in sortname ){
+         console.log(sortname[find]);
+    }
+</script>

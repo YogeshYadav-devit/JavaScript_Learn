@@ -1,0 +1,28 @@
+<script>
+    let name = new Set(['Yogesh', 'mahi', 'Vishal', 'rao', 'happy']);
+    console.log(name);
+    console.log(typeof (name));
+    let result = name instanceof Set;
+console.log(result);
+let size = name.size;
+console.log(size);
+name.add('Vishal')
+    .add('Mahi');
+console.log(name);
+let exit= name.has('mahi')
+console.log(exit);//true and false
+// remove elements in a set
+name.delete('mahi');
+console.log(name);
+name.clear();//remove all elements in a set
+name.add('Vishal').add('Mahi');
+for( let name of name){
+    console.log(name);
+
+}
+for (let [key, value] of name.entries()) {
+    console.log(key === value);
+}
+name.forEach(name => console.log(name.toUpperCase()));
+   
+</script>

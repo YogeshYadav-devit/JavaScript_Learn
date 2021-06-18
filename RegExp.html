@@ -1,0 +1,101 @@
+<script>
+    let name = /Yogesh/;
+    //test method is check the value of string in reg
+let result = name.test('hi yogesh');
+let check= name.test(/ Yogesh/)
+console.log(name);
+console.log(result);
+console.log(check);
+// ignore case
+name = /yogesh/g
+check= name.test(/ HI Yogesh/)
+console.log(check);
+name = /Yogesh/i
+check= name.test(/yogesh hi/)
+console.log(check);
+// pattern flag
+name = new RegExp('yogesh','i')
+check = name.test("Yogesh is a bad boy")
+console.log(check);
+// global flag
+name = "Yogesh is a b b and yogesh ia a Yogesh"
+let re = /yogesh/gi;
+
+let matches = [];
+let match;
+do {
+    match = re.exec(name);
+    if(match) {
+      matches.push(match);
+    }
+} while(match != null)
+
+console.dir(matches);
+// global falg show the array
+ check = name.match(/yogesh/gi);
+console.log(check);
+//replace a string in first 
+check = name.replace('yogesh','YOGESH')
+console.log(check);
+// replace flag to remove find and replace all 
+check = name.replace(/yogesh/gi,'Yogesh')
+console.log(check);
+
+
+
+// the character classes in regular expressions.
+// \d to match the first number in the phone number:
+let phone = '+0-(123)-555-0105';
+check = /\d/;
+console.log(phone.match(check))
+//global flag (g), the regular expression will search for all numbers, not the first one;
+check = /\d/g;
+console.log(phone.match(check));
+console.log('+0-(123)-555-01050105'.match(/\d/g).join(''));
+//matches the ASCII character
+name= 'O2 is oxygen';
+check = /\w\d/g
+console.log(name.match(check));  
+
+name = 'O2 is oxygen and H2O is a water';
+check = /\w\d/g
+console.log(name.match(check)); 
+
+//  remove the non-digit using the \D inverse class and replace all non-digit characters with blankphone = '+1-(408)-555-0105';
+phone = '+0-(123)-555-0105';
+ check= /\D/g;
+console.log(phone.replace(check,''));
+
+name = "yogesh is a yo.gesh"
+check= /yo.gesh/
+console.log(name.match(check));
+
+// regular expression anchors 
+name = "yogesh is a yogesh"
+check= /^Y/gi
+console.log(check.test(name));
+check= /h$/gi
+console.log(check.test(name));
+let isValid = /^\d\d:\d\d$/.test('12:05');
+console.log(isValid);
+ isValid = /^\d\d:\d\d$/.test('12:105');
+console.log(isValid);
+isValid = /^\d\d:\d\d\d$/.test('12:105');
+console.log(isValid);
+
+//replace multiple value 
+let fruit  = "I like to eat, eat, eat apples and bananas";
+let re = /apples|bananas/gi;
+
+let newFruit = fruit.replace(re, (match) => { 
+    console.log({match}); 
+    return match.toUpperCase();
+});
+
+console.log(newFruit);
+
+
+
+
+
+</script>
