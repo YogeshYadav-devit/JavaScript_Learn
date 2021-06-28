@@ -1,0 +1,76 @@
+
+
+<html lang="en">
+
+<head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    
+
+    <div class="container my-4">
+        <h2 class="text-center">Employee List</h2>
+        <input class="form-control" id="id"  hidden >
+            <div class="form-group">
+                <label for="title">Name</label>
+                <input type="text" class="form-control" id="name"  >
+            </div>
+
+            <div class="form-group">
+                <label for="description">Derpartment</label>
+                <input type="text" class="form-control" id="derpartment"  >
+           
+            </div>
+            <div class="form-group">
+                <label for="description">Designation</label>
+                <input type="text" class="form-control" id="designation" >
+                
+            </div>
+            <div class="form-group">
+                <label for="description">Salary</label>
+                <input type="text" class="form-control" id="salary"  >
+               
+            </div>
+            
+
+            <input type="button"   onclick="addEmployee(isAdd)" value="Add Employee" id="saveButton">
+            <button type="button" class="btn btn-success mr-sm-2" id="savetaskbtn" style="display: none;">
+                Save Task
+              </button>
+
+         
+
+        <div id="items" class="my-4">
+            <h2>My Employee list</h2>
+            <table class="table">
+                <thead>
+                  <tr>
+
+                    <th scope="col">SNo</th>
+                    <th scope="col">Name</th>
+                    <th scope="col"> Derpartment</th> 
+                    <th scope="col"> Designation</th> 
+                    <th scope="col"> Salary</th> 
+                    <th scope="col">Actions</th> 
+                  </tr>
+                </thead>
+                <tbody id="tableBody">
+                
+                  
+                </tbody>
+              </table>
+        </div>
+    </div>
+        <script  src="Employee.js"></script>
+</body>
+
+</html> 
