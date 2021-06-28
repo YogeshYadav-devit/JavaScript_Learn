@@ -1,0 +1,8 @@
+<input type="text" #toDoName placeholder="Enter toDolist Name"> 
+<input type="submit" Value="AddToDo" (click)="AddToDo(toDoName.value)">
+
+<ul *ngFor="let toDolist  of toDoList">
+    <li>
+        {{toDolist.name}}<input type="submit" (click)="removetoDolist(toDolist.id)" value="remove">
+    </li>
+</ul>
