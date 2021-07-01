@@ -1,0 +1,27 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Address</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Email</th>
+        <th scope="col">College</th>
+        <th scope="col">Update Progress</th>
+        <th scope="col">Update States</th>
+        <th scope="col">Delete</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let interndata of lstInterns">
+        <td>{{interndata.name}}</td>
+        <td>{{interndata.address}}</td>
+        <td>{{interndata.phoneNumber}}</td>
+        <td>{{interndata.email}}</td>
+        <td>{{interndata.collegeName}}</td>
+        <td>{{interndata.collegeName}}</td>
+        <td>{{interndata._id}}</td>
+        <td><button  (click)="delete(interndata._id)" class="btn"><i class="fa fa-trash"></i></button></td>
+      </tr>
+    </tbody>
+  </table>
