@@ -11,4 +11,12 @@ export class LocalInternService {
   constructor(private internService:InternsService) { 
     
   }
+  public getAllInterns() {
+    this.internService.getInterns().subscribe(res=>{
+      console.log(res);
+      if(res.success){
+        this.lstInterns = res;
+      }
+    });
+  }
 }

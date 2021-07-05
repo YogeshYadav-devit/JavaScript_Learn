@@ -8,7 +8,10 @@ import { ApplyInternComponent } from './apply-intern/apply-intern.component'
 import { AppRoutingModule } from '../app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { InternsService } from './services/interns.service';
-
+import { InternDetailsComponent } from './intern-details/intern-details.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 @NgModule({
@@ -17,13 +20,17 @@ import { InternsService } from './services/interns.service';
     GetInternComponent,
     HeaderComponent,
     ApplyInternComponent,
+    InternDetailsComponent,
   ],
   imports: [
     CommonModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
-    
+    FormsModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
+    ModalModule.forRoot()
+
   ],
   exports: [ 
     HomeComponent,
