@@ -86,8 +86,8 @@
                         <label class="form-label">Date </label>
 
                         <input [(ngModel)]='progressDate' name="progressDate" #progressdate="ngModel" type="date"
-                          name='date' min="{{interndata.startDate | date: 'yyyy-MM-dd'}}"
-                          max="{{max | date: 'yyyy-MM-dd'}}" class="form-control" required />
+                          name='date' min="{{interndata.startDate }}"
+                          max="{{max}}" class="form-control" required />
                         <div class="text-danger" *ngIf="progressdate.touched  && progressdate.errors">
                           <p *ngIf="progressdate.errors.required">Date Is Required.</p>
                         </div>
@@ -134,9 +134,9 @@
                 </optgroup>
               </select>
             </div> -->
-            <div *ngIf='interndata.status == "InTraining"|| interndata.status == "Pending"'>
-              <select class="form-select" [(ngModel)]="interndata.status" (change)="updateIntern('',interndata)">
-                <optgroup  [disabled]="interndata.status == 'InTraining' "   label="Pending">
+            <div *ngIf='interndata.status == "InTraining" || interndata.status == "Pending"|| interndata.status == "Rejected" || interndata.status == "Completed" || interndata.status == "Cancelled" '>
+              <select [disabled]='interndata.status == "Rejected" || interndata.status == "Completed" || interndata.status == "Cancelled" ' class="form-select" [(ngModel)]="interndata.status" (change)="updateIntern('',interndata)">
+                <optgroup  [disabled]="interndata.status == 'InTraining'"   label="Pending">
                   <option value="InTraining">InTraining</option>
                   <option value="Rejected">Rejected</option>
                 </optgroup>
@@ -146,12 +146,12 @@
                 </optgroup>
               </select>
             </div>
-            <div
+            <!-- <div
               *ngIf='interndata.status == "Rejected" || interndata.status == "Completed" || interndata.status == "Cancelled" '>
               <select disabled class="form-select">
                 <option selected>{{interndata.status}}</option>
               </select>
-            </div>
+            </div> -->
           </td>
           <td>
             <div class="form-check form-switch">

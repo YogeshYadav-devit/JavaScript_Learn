@@ -53,7 +53,6 @@ export class InternDetailsComponent implements OnInit {
         console.log("No Exit intern Id");
       }
     });
-    console.log(this.interndetails.branchName)
   }
 
 }
