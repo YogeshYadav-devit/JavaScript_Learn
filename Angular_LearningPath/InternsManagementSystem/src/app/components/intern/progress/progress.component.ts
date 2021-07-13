@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { InternsService } from '../services/interns.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Intern } from '../models/Intern';
+import { Intern } from 'src/app/models/Intern';
+import { InternsService } from 'src/app/services/interns.service';
 
 
 @Component({
@@ -22,11 +22,11 @@ export class ProgressComponent implements OnInit {
     this.getInternId();
     this.showDetails();
   }
-  getInternId() {
+  getInternId():any {
     this._route.params.subscribe(params => this.internid = params.id);
     console.log(this.internid);
   }
-  showDetails() {
+  showDetails():any {
     this.InternsService.getInternsById(this.internid).subscribe(data => {
       if (this.internid = data._id) {
         this.progressdetails = data;

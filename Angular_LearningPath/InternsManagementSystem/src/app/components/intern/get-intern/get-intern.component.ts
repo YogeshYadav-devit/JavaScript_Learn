@@ -1,10 +1,9 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
-import { Intern, Progress } from '../models/Intern';
-import {status}from '../enums/status.enum';
-import { InternsService } from '../services/interns.service';
+import { InternsService } from 'src/app/services/interns.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+import { Intern, Progress } from 'src/app/models/Intern';
 
 @Component({
   selector: 'app-get-intern',
@@ -13,7 +12,6 @@ import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 })
 export class GetInternComponent implements OnInit {
   max:any;
-  status= status;
   index=0;
   modalRef!: BsModalRef;
   progressDate !: Date;
@@ -31,7 +29,7 @@ export class GetInternComponent implements OnInit {
   }
 
   // get the intern record into the intern service 
-  getInterns(){
+  getInterns():any{
     this.InternsService.getInterns().subscribe(
       data=>{ this.lstInterns=data;
         // sort the progressWork by date
@@ -54,12 +52,12 @@ export class GetInternComponent implements OnInit {
   }
 
   // show details a perticular  
-  showDetails(id:string){
+  showDetails(id:string):void{
     this.router.navigate(['/interns/',id]);
   }
 
   // delete the intern record
-  delete(id:string){
+  delete(id:string):void{
     var r = confirm("Are You sure to delete this Intern");
     if (r == true) {
       this.InternsService.delete(id).subscribe(data =>{this.getInterns();});

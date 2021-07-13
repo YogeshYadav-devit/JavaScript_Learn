@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { InternsService } from '../services/interns.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { LocalInternService } from '../services/local-intern.service';
-import { Intern } from '../models/Intern';
 import { Subscription } from 'rxjs';
+import { Intern } from 'src/app/models/Intern';
+import { InternsService } from 'src/app/services/interns.service';
 
 @Component({
   selector: 'app-intern-details',
@@ -24,12 +23,12 @@ export class InternDetailsComponent implements OnInit {
     this.showDetails();
   }
   //get the intern id into the url 
-  getInternId() {
+  getInternId():any {
     this._route.params.subscribe(params => this.internid = params.id);
     console.log(this.internid);
   }
   // fetch the intern data of particular intern id into the internService Method is getInternsById();
-  showDetails() {
+  showDetails() :any{
     this.InternsService.getInternsById(this.internid).subscribe(data => {
       if (this.internid = data._id) {
         this.interndetails = data;

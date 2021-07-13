@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url : 'https://crudcrud.com/api/d8826e480cc7468c90a177133fd983bb/intern'
+ 
 
 };
 

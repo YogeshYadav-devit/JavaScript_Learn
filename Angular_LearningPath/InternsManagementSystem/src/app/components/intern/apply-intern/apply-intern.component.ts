@@ -2,10 +2,8 @@ import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Intern } from '../models/Intern';
-import { InternsService } from '../services/interns.service';
-import {status}from '../enums/status.enum';
-
+import { Intern } from 'src/app/models/Intern';
+import { InternsService } from 'src/app/services/interns.service';
 
 @Component({
   selector: 'app-apply-intern',
@@ -21,7 +19,7 @@ export class ApplyInternComponent implements OnInit {
   constructor(private InternsService: InternsService ,private router: Router) { 
     this.max = new Date;
   }
-  onSubmit(data: Intern) {
+  onSubmit(data: Intern):void {
     data.isActive=false;  
     // data.status=status.pending;
     data.status= 'Pending';

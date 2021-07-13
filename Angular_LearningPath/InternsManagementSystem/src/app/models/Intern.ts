@@ -1,4 +1,4 @@
-import {status}from '../enums/status.enum';
+
 export class Intern{
     
     name : string ;

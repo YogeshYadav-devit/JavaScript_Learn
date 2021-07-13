@@ -4,7 +4,7 @@ import { FormsModule, FormGroup ,FormBuilder } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { InternModule } from './intern/intern.module';
+import { InternModule } from './components/intern/intern.module';
 
 @NgModule({
   declarations: [
